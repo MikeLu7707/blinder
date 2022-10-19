@@ -1,0 +1,19 @@
+<div class="pagination container justify-content-center">
+    <ul class="pagination">
+        <li class="page-item">
+            {%if page.has_previous%}
+            <a href="?page={{ page.previous_page_number }}" class="page-links">previous</a>
+            {% endif %}
+        </li>
+        <li class="page-item page-links">
+            {{page.number}}
+        </li>  
+        <li class="page-item page-link">of </li> 
+        <li class="page-item page-link"> {{page.paginator.num_pages}}</li>
+        <li class="page-item">
+            {%if page.has_next%}
+            <a href="?page={{page.next_page_number }}">next</a>
+            {% endif %}
+        </li>  
+    </ul>
+</div>
