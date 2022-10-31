@@ -11,8 +11,46 @@
     <link rel="stylesheet" href="{% static 'css/APP.css'%}">
 </head>
 <body>
+    <nav>
+        <div class="logo">
+            <h1>Blog</h1>
+        </div>
+        <ul class="nav-item">
+            <li><a href="">Home</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Blog</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'blinder:logout' %}">log out</a></li>
+            {% else %}
+            <li>
+                <a href="{% url 'blinder:login' %}">login</a>
+            </li>
+            <li>
+                <a href="{% url 'accounts:signup' %}">sign up</a>
+            </li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <ul>hello. {{request.user}}</ul>
+            {% endif %} 
+        </ul>
+        <div class="BM">
+            <div class="line 1"></div>
+            <div class="line 2"></div>
+            <div class="line 3"></div>
+        </div>
+    </nav>
+    <div class="conatainer mt-5">
+        {% if messages %}
+            {% for message in message %}
+            <div class="alert alert-danger mt-5" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     {% block content%}
-
+    
 
 
     {% endblock content%}
