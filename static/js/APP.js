@@ -1,1 +1,0 @@
-window.alert("How is life in the mind of a mad man");
