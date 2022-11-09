@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<section class="">
+    <div class="container">
+        <div class="row">
+            <div class=""></div>
+        </div>
+    </div>
+</section>
+{% if form_errors %}
+There was an error
+{% endif %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="update profile">
+</form>
+
+
+{% endblock content %}

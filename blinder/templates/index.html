@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
-
 {%block content%}
+<!-- Hero section starts here -->
+<section>
+    <div class="main">
+        <h1 class="section-title"> Headlines of Inspirations, Warfare & Notables. . . .<br> Ayiko!!!!</h1>
+        <p>The samurai, members of a powerful military caste in feudal Japan, began as provincial warriors before rising to power in the 12th century with the beginning of the country's first military dictatorship, known as the shogunate. As servants of the daimyos, or great lords, the samurai backed up the authority of the shogun and gave him power over the mikado (emperor).</p>
+        <button class="hero"><a href="#">Learn More</a></button>
+    </div>
+</section>
 
-<img src="{% static 'images/lib.jpg' %}" alt="">
-<h1>This is HOME page</h1>
+<!--Remember the plan is to move this to Blog page-->
 {%for post in posts%}
 <h2>
     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
